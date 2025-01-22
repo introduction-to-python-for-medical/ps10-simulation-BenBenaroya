@@ -20,27 +20,30 @@ def spread_fire(grid):
                 if 2 in neighbors:
                   update_grid[i][j] = 2
             else:
-              if j < grid_size-1:
+              if j == 0:
+                neighbors = [grid[i+1][j],grid[i][j+1],grid[i-1][j]]
+                if 2 in neighbors:
+                  update_grid[i][j] = 2
+              elif j < grid_size-1:
                 neighbors = [grid[i-1][j],grid[i+1][j],grid[i][j-1],grid[i][j+1]]
                 if 2 in neighbors:
                   update_grid[i][j] = 2
-              if j == grid_size-1:
+              elif j == grid_size-1:
                 neighbors = [grid[i-1][j],grid[i+1][j],grid[i][j-1]]
                 if 2 in neighbors:
                   update_grid[i][j] = 2
             
         if i == grid_size-1:
           if grid[i][j] == 1:
-            if j < grid_size-1:
-              if j == 0:
-                neighbors = [grid[i][j+1],grid[i-1][j]]
-                if 2 in neighbors:
-                  update_grid[i][j] = 2
-              else:
-                eighbors = [grid[i-1][j],grid[i][j-1],grid[i][j+1]]
-                if 2 in neighbors:
-                  update_grid[i][j] = 2
-            if j == grid_size-1:
+            if j == 0:
+              neighbors = [grid[i-1][j],grid[i][j+1]]
+              if 2 in neighbors:
+                update_grid[i][j] = 2
+            elif j < grid_size-1:
+              neighbors = [grid[i-1][j],grid[i][j-1],grid[i][j+1]]
+              if 2 in neighbors:
+                update_grid[i][j] = 2
+            elif j == grid_size-1:
               neighbors = [grid[i-1][j],grid[i][j-1]]
               if 2 in neighbors:
                 update_grid[i][j] = 2
