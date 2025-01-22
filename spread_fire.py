@@ -27,7 +27,5 @@ def spread_fire(grid):
                 neighbors = [grid[i-1][j],grid[i][j-1]]
                 if 2 in neighbors:
                   update_grid[i][j] = 2
-            
-  
-    return update_grid
+        return update_grid
 
