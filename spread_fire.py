@@ -1,3 +1,5 @@
+import copy
+
 # define the rules for spreading the fire
 def spread_fire(grid):
     """Update the forest grid based on fire spreading rules."""
